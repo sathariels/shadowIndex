@@ -1,0 +1,94 @@
+EVENT broken_mirror
+TITLE The Broken Mirror
+DESC A large ornate mirror leans against the wall, cracked down the center.
+DESC You see your reflection, but it is smiling a cruel smile.
+CHOICE Smash it completely (-1 Clarity, +1 Dread)
+REWARD shadow_claws
+EFFECT clarity -1 dread 1
+CHOICE Stare into its eyes (+1 Resolve, +1 Clarity)
+EFFECT resolve 1 clarity 1
+CHOICE Turn away (+1 Compassion)
+EFFECT compassion 1
+
+EVENT whispering_arch
+TITLE The Whispering Archway
+DESC An archway stands in the middle of the room, though it connects to no walls. Faint voices emanate from within it.
+CHOICE Listen closely (+1 Clarity, +1 Dread)
+EFFECT clarity 1 dread 1
+CHOICE Walk through quickly (+1 Resolve)
+EFFECT resolve 1
+
+EVENT library
+TITLE The Overgrown Library
+DESC Vines choke the bookshelves. Most books are rotted, but one remains pristine on a pedestal.
+CHOICE Read the book (+2 Clarity, +1 Pride)
+EFFECT clarity 2 pride 1
+CHOICE Burn the vines (+1 Dread, -1 Compassion)
+EFFECT dread 1 compassion -1
+
+EVENT weeping_statue
+TITLE The Weeping Statue
+DESC A statue of a forgotten god weeps black sludge. A pool has formed at its base.
+CHOICE Collect the sludge (-1 Compassion, +1 Pride)
+EFFECT compassion -1 pride 1
+CHOICE Comfort the statue (+2 Compassion)
+EFFECT compassion 2
+CHOICE Destroy the statue (Resolve Check DC 10)
+CHALLENGE resolve 10
+WinEFFECT resolve 2 dread 1
+FailEFFECT resolve -2 dread 2
+
+EVENT ghost_feast
+TITLE The Ghostly Feast
+DESC A long table is set with rotting food. Ghostly figures sit silently, waiting for a toast.
+CHOICE Join the toast (+1 Dread, -1 Clarity)
+EFFECT dread 1 clarity -1
+CHOICE Flip the table (+2 Resolve, +1 Pride)
+EFFECT resolve 2 pride 1
+
+EVENT clockwork_heart
+TITLE The Clockwork Heart
+DESC A mechanical heart beats on the floor, wires trailing into the darkness.
+CHOICE Repair it (+1 Clarity, +1 Compassion)
+EFFECT clarity 1 compassion 1
+CHOICE Harvest parts (+1 Pride)
+EFFECT pride 1
+
+EVENT shadow_market
+TITLE The Shadow Market
+DESC Merchants with no faces offer wares for pieces of your soul.
+CHOICE Trade a memory (-1 Clarity, +2 Pride)
+EFFECT clarity -1 pride 2
+CHOICE Attack a merchant (+1 Dread, +1 Resolve)
+EFFECT dread 1 resolve 1
+CHOICE Leave immediately (no change)
+EFFECT
+
+EVENT collapsed_ceiling
+TITLE The Collapsed Ceiling
+DESC Debris blocks the path. You see a glimmer of light through a small gap.
+CHOICE Dig through (+1 Resolve, -1 Pride)
+EFFECT resolve 1 pride -1
+CHOICE Find another way (-1 Resolve, +1 Clarity)
+EFFECT resolve -1 clarity 1
+
+EVENT device_found
+TITLE A Strange Device
+DESC You find a small, humming metal box on a pedestal. It seems out of place.
+CHOICE Pick it up (+1 Curiosity)
+ADDFLAG has_device
+EFFECT clarity 1
+CHOICE Leave it alone (+1 Caution)
+ADDFLAG ignored_device
+EFFECT dread 1
+
+EVENT device_activation
+REQ has_device
+TITLE The Device Awakens
+DESC The metal box in your pack begins to vibrate violently.
+CHOICE Smash it against the wall
+ADDFLAG smashed_device
+EFFECT resolve 1
+CHOICE Hold it tight
+ADDFLAG listened_device
+EFFECT compassion 1

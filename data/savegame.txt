@@ -1,0 +1,8 @@
+234
+10
+12 1 9 7 7
+weeping_statue
+0
+2
+listened_device
+has_device

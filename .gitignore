@@ -1,0 +1,5 @@
+obj/
+shadow_index
+.cache/
+compile_commands.json
+.DS_Store
