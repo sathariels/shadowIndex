@@ -92,3 +92,94 @@ EFFECT resolve 1
 CHOICE Hold it tight
 ADDFLAG listened_device
 EFFECT compassion 1
+
+EVENT antarctica_start
+TITLE The White Desert
+DESC A blinding blizzard howls around you. The convoy is lost, and the temperature is dropping rapidly.
+CHOICE Scout ahead (+1 Clarity)
+ADDFLAG scouted_path
+EFFECT clarity 1
+CHOICE Hunker down (+1 Compassion, -1 Resolve)
+EFFECT compassion 1 resolve -1
+
+EVENT winter_beast
+TITLE The Winter Beast
+DESC A titan of ice and hunger looms in the snow, its eyes burning with blue fire.
+CHOICE Fight it (Resolve Check DC 15)
+CHALLENGE resolve 15
+WinEFFECT resolve 2 pride 2
+FailEFFECT resolve -2 dread 2
+CHOICE Flee into the ruins (-1 Pride, +1 Dread)
+EFFECT pride -1 dread 1
+
+EVENT spire_sight
+TITLE The Crimson Spire
+DESC You see a needle of blood-red stone piercing the sky. The Dark Sea rises to meet it.
+CHOICE Climb higher (+1 Resolve)
+EFFECT resolve 1
+CHOICE Search for memories (+1 Pride)
+EFFECT pride 1
+
+EVENT stone_forest
+TITLE The Forest of Stone
+DESC Statues of ancient horrors stand frozen in a petrified forest. They seem to be watching.
+CHOICE Meditate on their form (+1 Clarity, +1 Dread)
+EFFECT clarity 1 dread 1
+CHOICE Smash the statues (+1 Resolve)
+ADDFLAG angered_stone
+EFFECT resolve 1
+
+EVENT sleeper_encounter
+REQ angered_stone
+TITLE The Sleeper's Doom
+DESC The statues you smashed were seals. A Fallen creature has awakened.
+CHOICE Fight for your life (Resolve Check DC 12)
+CHALLENGE resolve 12
+WinEFFECT resolve 2 pride 1
+FailEFFECT resolve -2 dread 3
+CHOICE Run (+1 Dread)
+EFFECT dread 1
+
+EVENT meet_noctis
+TITLE The Sorcerer's Deal
+DESC A man with a playful smile and moonlit eyes sits on a floating rock. He offers you a goblet.
+CHOICE Drink with him (+2 Clarity, -1 Dread)
+EFFECT clarity 2 dread -1
+CHOICE Refuse (-1 Compassion)
+EFFECT compassion -1
+
+EVENT nephis_trace
+TITLE The Changing Star
+DESC You see flames burning on a corpse. The fire does not spread, but it refuses to die.
+CHOICE Touch the flame (+1 Resolve, -1 Compassion)
+EFFECT resolve 1 compassion -1
+CHOICE Pay respects (+1 Compassion)
+EFFECT compassion 1
+
+EVENT cursed_hall
+TITLE The Soul Devourer
+DESC A creature made of many limbs skitters on the ceiling, dripping acid.
+CHOICE Hold your breath (Clarity Check DC 10)
+CHALLENGE clarity 10
+WinEFFECT clarity 1 dread -1
+FailEFFECT dread 2
+CHOICE Attack immediately (+1 Resolve, +1 Dread)
+EFFECT resolve 1 dread 1
+
+EVENT weaver_shrine
+TITLE The Weaver's Web
+DESC Golden strings are woven into a complex pattern on the wall. It hurts your eyes to look at it.
+CHOICE Study the pattern (+1 Clarity)
+ADDFLAG forbidden_knowledge
+EFFECT clarity 1
+CHOICE Cut the web (+1 Dread)
+EFFECT dread 1
+
+EVENT fate_choice
+REQ forbidden_knowledge
+TITLE Fated Encounter
+DESC You see the threads of fate connecting you to a looming shadow. It feels familiar.
+CHOICE Accept your role (+2 Pride, +1 Power)
+EFFECT pride 2 resolve 1
+CHOICE Struggle against it (+2 Resolve)
+EFFECT resolve 2

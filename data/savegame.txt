@@ -1,8 +1,7 @@
-234
+12345
 10
-12 1 9 7 7
-weeping_statue
+11 3 13 7 6
+antarctica_start
 0
-2
-listened_device
-has_device
+1
+scouted_path
